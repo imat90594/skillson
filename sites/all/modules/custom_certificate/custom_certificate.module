@@ -112,6 +112,7 @@ function get_certificate($course_id) {
 	$pdf->SetY($course_position[0]);
 	$pdf->SetX($course_position[1]);
 	$pdf->Cell(0, 0, $course->title);
+	$pdf->SetFont('Arial','B',13);
 	$pdf->SetY($date_position[0]);
 	$pdf->SetX($date_position[1]);
 	$pdf->Cell(0, 0, date("F d, Y"));
@@ -156,6 +157,7 @@ function preview_certificate(&$form, &$form_state) {
 	$pdf->SetY($course_position[0]);
 	$pdf->SetX($course_position[1]);
 	$pdf->Cell(0, 0,'Sampe Course Name');
+	$pdf->SetFont('Arial','B',13);
 	$pdf->SetY($date_position[0]);
 	$pdf->SetX($date_position[1]);
 	$pdf->Cell(0, 0,'August 26, 2015');

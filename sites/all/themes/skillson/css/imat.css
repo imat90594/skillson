@@ -308,13 +308,19 @@ input.password-confirm, input.password-field {
 
 /* USER EDIT PROFILE */
 
+.user-profile label {
+	display:none !Important;
+}
+
 .page-user-edit .courses #title-wrapper, 
 .page-user-edit .courses #tabs,
 .page-notification #title-wrapper,
 .page-certificates #title-wrapper,
 .page-referrals #title-wrapper,
 .page-events #title-wrapper,
-.page-subscribe #title-wrapper
+.page-subscribe #title-wrapper,
+.pag-certificates #title-header,
+.page-enroll #title-wrapper
  {
 	display:none!important;	
 }
@@ -324,7 +330,7 @@ input.password-confirm, input.password-field {
 }
 
 .form-item-files-picture-upload label { 
-	background: url('/sites/all/themes/skillson/img/theme/upload.png') no-repeat;
+	background: url('/sites/all/themes/skillson/img/theme/profile-pic.png') no-repeat;
 	display:inline-block !important;
 	text-indent: -9999px;  
 }
@@ -333,64 +339,148 @@ input.password-confirm, input.password-field {
 display: inline-block;
 }
 .form-item-files-picture-upload label {
-display: block;
-width: 307px;
-height:50px;
+    height: 70px;
+    width: 100%;
+    cursor:pointer;
 }
 
 .no-padding-user .region-content {
 	padding:0px !important;
 }
 
+.pic-container {
+	border: 1px solid #F3F3F3;
+	padding:15px;
+}
+
+
 /* CERTIFICATE */
 
-#title-header h1 {
-	color:#0072FF !important; 
+.cert {
+	height:110px;
 }
 
-.certficate-container .course-thumbnail-placeholder{
-	min-height:172px !important;
+.print-cert {
+	margin:10px 0px;
 }
 
-.cert-view-btn {
-	margin-top:10px;
-}
-
-.page-certficates #title-wrapper h1 {
-	display:none!important;
+.notif-cert {
+	background-color:#F3FCF5;
 }
 	
 /* Notifications */
 
+.notif-container {
+	padding:25px;
+	background-color:#FEFEFE;
+	border: 1px solid #EDEDED;
+}
+
+.header-text  {
+	color:#A1A1A1;
+	padding-left:50px;
+}
+
+#title-header h1 {
+}
+
+#title-header h1 .bordered {
+	padding-bottom:5px;
+	border-bottom: 2px solid #C9FCD4 !important; 
+}
+
 .notif-holder {
 	border:1px solid #D3D3D3;
-	border-radius:10px;
 	padding:10px;
+	margin-bottom:20px;
+	border-radius:0px !important;
+}
+
+.cut {
+    display: inline-block;
+    border: 37px solid transparent;
+    border-top: 85px solid #60C977;
+    border-left: 59px solid #60C977;
+    border-bottom: 25px;
+}
+
+.bell-container {
+	color:#20B540;
+}
+
+.gl-white {
+	color:white;
+	background-color:#60C977;
+	position:relative;
+	top:-20px;
+}
+
+.notif-container .glyphicon {
+    width: auto !important;
+    padding: 8px;
+    font-size: 15px;
+    background-color: #F3F3F3;
+    color: #4F5D6B;
+    font-weight: bolder;
+}
+
+.text-title {
+	font-size:15px !important;
+}
+
+.notif-title-container {
 	margin-bottom:20px;
 }
 
 .notif-holder p {
-	margin-top:10px;
+	margin-top:20px;
 	font-size:13px;
+	font-weight:normal;
 }
 
-.notif-btn {
-	background-color:#FF9600;
-	padding:5px 15px;
-	font-weight:bold;
-	color:white;
-	font-size:13px;
-	margin-bottom:20px;
+.notif-text {
+	margin-top:10px !important;
 }
 
-.notif-btn-mute {
-	background-color:#939393;
-	padding:5px 15px;
-	font-weight:bold;
-	color:white;
-	font-size:13px;
-	margin-bottom:20px;
+.no-content {
+	border:1px solid #EDEDED;
+	background-color:white;
+	min-height:400px;
+	margin-top:50px
 }
+
+.no-content-text {
+	position:relative;
+	top:-60px;
+}
+
+.no-content-text h1 {
+	font-size:3em;
+	margin-top:5px;
+	margin-bottom:0px;
+	text-align:left!important;
+	color:#707070;
+}
+
+.no-content-divider hr {
+	border-top:2px solid #E8E8E8;
+	margin-top:20px;
+}
+
+.no-content-text p {
+	font-size:15px;
+	margin-top:5px;
+	color:#ADADAD;
+}
+
+.gl-big {
+	color:#F9F9F9 !important;
+	font-size:20em !important;
+	background-color:transparent !important;
+	position:relative;
+	top:-60px;
+}
+
 
 /* REFERRALS */
 
@@ -419,18 +509,35 @@ height:50px;
 	display:none!important;
 }
 
-.mailchimp-signup-subscribe-form .form-submit  {
-	margin-top:10px !important;
+.subscribe-title {
+	font-size:2.7em;
 }
 
-#subscribe-container {
-	margin-bottom:10px;
+.subs-container {
+	padding:0px;
+	border:1px solid #ccc;	
+}
+
+.subs-container .glyphicon-inbox {
+	background-color:transparent;
+	color:#C9FCD4;
+	position:relative;
+	font-size:5em;
+}
+
+.mailchimp-signup-subscribe-form .form-submit  {
+	margin-top:10px !important;
 }
 
 /* CHECKOUT */
 
 .checkout {
 	padding-bottom:25px !important;
+}
+
+.checkout-divider {
+	width:50%;
+	margin:40px auto;
 }
 
 .page-checkout .login-fields-container {
@@ -452,9 +559,9 @@ height:50px;
 .table>tfoot>tr>th,
 .table>thead>tr>td, 
 .table>thead>tr>th {
-	padding: 20px;
+	padding: 22px;
 	border:1px solid #ECECEC;
-	font-size: 16px;
+	font-size: 15px;
 	background-color:white;
 }
 
@@ -478,13 +585,33 @@ height:50px;
 }
 
 .prod-details {
-	font-size:14px;
+	font-size:13px;
+}
+
+.prod-details span{
+	font-weight:bold;
+}
+
+.prod-feature {
+	margin-left:20px;
+}
+
+.prod-price {
+	margin-left:-20px !important;
+    right: -16px !important;
+    position: relative;
+    font-size:16px;
 }
 
 .cart-panel {
 	border:1px solid #ECECEC;
 	border-left:5px solid #60c977;
     min-height: 190px;
+}
+
+.cart-panel .col-md-4 {
+	min-height:200px;
+	background-size: cover;
 }
 
 .checkout .form-required {
@@ -503,32 +630,11 @@ height:50px;
 }
 
 .checkout-billing-payment-container input {
-	text-align: center
-}
-
-select[name="customer_profile_billing[commerce_customer_address][und][0][country]"],
-select[name="customer_profile_billing[commerce_customer_address][und][0][administrative_area]"] {
-	padding:0px;
-	text-indent: 43%;
-	height:40px; 
-	width:100%;
+	padding-left:20px;
 }
 
 .checkout-billing-payment-container label {
 	display:none;
-}
-
-
-#commerce-checkout-form-checkout .form-submit {
-	text-transform:initial !important;
-	border-radius:8px; 
-	margin-left:25px;
-	padding:10px 20px;
-	margin-bottom:15px;
-}
-
-#commerce-checkout-form-checkout .checkout-cancel {
-	background-color:#222222;
 }
 
 
@@ -557,8 +663,27 @@ select[name="customer_profile_billing[commerce_customer_address][und][0][adminis
 .form-item-customer-profile-billing-commerce-customer-address-und-0-name-line {
 	margin-bottom:0px;
 }
-	
+
+.form-item-customer-profile-billing-commerce-customer-address-und-0-country {
+	padding-left:15px;
+}
+ 
+input[name='customer_profile_billing[commerce_customer_address][und][0][thoroughfare]'] {
+	max-width: 97%;
+}
+
+/* billing info */
+
+.checkout-billing-payment-container .alert-danger 	{
+	text-align:left !important;
+}
 /** payment info **/
+
+.payment-banner {
+	border:1px solid #E2E2E2;
+    padding: 25px;
+    background-color:#FBFBFB;
+}
 
 .checkout #edit-commerce-payment-payment-details-credit-card-exp-month,
 .checkout #edit-commerce-payment-payment-details-credit-card-exp-year,
@@ -567,6 +692,24 @@ select[name="customer_profile_billing[commerce_customer_address][und][0][adminis
 	width:30%;
 	display:inline;
 }
+
+.payment-banner .text {
+	font-size:15px;
+	margin-right:20px;	
+}
+
+.payment-banner .text2 {
+	font-size:15px;
+    position: relative;
+    top: -43px;
+    margin-right: 40px;	
+}
+
+.payment-banner .glyphicon-credit-card {
+	font-size:85px;
+	color:#60c977;
+}
+
 
 .commerce-paypal-icon {
 	top:0px;
@@ -607,21 +750,27 @@ label[for="edit-commerce-payment-payment-details-credit-card-exp-month--2"]
 	margin:0px;
 }
 
-	
-.coupon-container #edit-commerce-coupon-coupon-code {
-    margin-bottom:10px;
-    text-align: center;
+.coupon-container .form-submit {
+	border-radius:0px;
+	padding:16px 30px !important;
+	font-weight:bold;
 }
 
 .coupon-container table {
 	width:100%;
 }
 
+.big-price {
+	padding: 10px 30px !important;
+    font-size: 22px !important;
+    margin-top: 50px;
+}
+
 .coupon-container table, 
 .coupon-container table tr, 
 .coupon-container table thead th, 
 .coupon-container table tbody {
-	background-color:#0072ff;
+	background-color:#60c977;
 	border:0px;
 	color:white !important;
 	text-align:center;
@@ -648,9 +797,10 @@ label[for="edit-commerce-payment-payment-details-credit-card-exp-month--2"]
 #commerce-checkout-coupon-ajax-wrapper .form-item, 
 #commerce-checkout-coupon-ajax-wrapper input,
 #commerce-checkout-coupon-ajax-wrapper legend,
+#commerce-checkout-coupon-ajax-wrapper .form-submit,
 #edit-account legend
 {
-	display:none
+	display:none !important;
 }
 
 #commerce-checkout-coupon-ajax-wrapper .error {
@@ -665,29 +815,404 @@ label[for="edit-commerce-payment-payment-details-credit-card-exp-month--2"]
   width: 80%;
 }
 
+#commerce-checkout-form-checkout .form-submit#edit-continue {
+	padding: 15px 30px !important;
+    font-size: 20px !important;
+    text-transform: none;
+    width: 40%;
+    margin-bottom: 60px;
+}
 
-/** shopping cart summary **/
+.payment-container {
+	font-size:15px !Important;
+}
 
+
+/* complete messsage */
+.complete-message p {
+	font-size:16px;
+}
+
+.complete-message h1  {
+	font-size:2.7em;
+}
+
+
+/** redeem **/
+	
 .redeem-container {
 	padding:20px 0px;
+	min-height:500px;
+	padding:25px;
+	background-color:#FEFEFE;
+	border: 1px solid #EDEDED;
+}
+
+.redeem-container label {
+	display:none!important;
+}
+
+.redeem-container p {
+	font-size:14px;
+}
+
+.redeem-container .form-container {
+	margin-top:30px;
 }
 
 .redeem-container .form-submit {
-	padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 7px;
-    font-size: 12px;
-    border-width: 2px;
+	padding: 17px 60px;
+    font-size: 14px;
     font-weight: bold;
-    background-color: #0767dd;
-    border-color: #0767dd;
+    background-color: #60c977;
+    border-color: #60c977;
     font-weight:bold;
     color:white;
+    margin-top:30px;
+    height: 55px;
+}
+
+.registraiton-voucher-container {
+	margin-top:45px;
+}
+
+.redeem-container #edit-submit {
+	margin:0px;
 }
 
 #validate-voucher {
-	margin-top:10px !important;
+	cursor:pointer;
+}
+
+/* student form */
+.student-form-container {
+	background-image:url("/sites/all/themes/skillson/img/theme/form-bg.jpg");
+	min-height:200px;
+	color:white;
+	background-size:cover;
+}
+
+.student-form-container h1 {
+	font-size:3em;
+	margin-bottom:0px;
+}
+
+.student-form-container #form-text {
+	font-size:1.4em;
+	margin-top:5px;
+}
+.student-form-container .form-heading {
+	background-color: rgba(32, 188, 128, 0.89);
+}
+
+.student-form-container .form-heading {
+    padding-bottom: 2px;
+    padding-right: 10px;
+}
+
+
+.skewed-bg {
+  background-color: rgba(32, 188, 128, 0.89);
+  -ms-transform: skew(0deg, 9.4deg);
+  -webkit-transform: skew(0deg, 9.4deg);
+  transform: skew(0deg, 9.4deg);
+  position: relative;
+  top: -55px;
+}
+.skewed-bg .content {
+  -ms-transform: skew(0deg, -9.4deg);
+  -webkit-transform: skew(0deg, -9.4deg);
+  transform: skew(0deg, -9.4deg);
+}
+
+.skewed-bg-top {
+    width: 0;
+    height: 0;
+    border-left: 333px solid transparent;
+    border-right: -16px solid transparent;
+    border-top: 63px solid rgba(32, 188, 128, 0.89);
+    font-size: 0;
+    line-height: 0;
+}
+
+.student-form-container .form-body {
+	padding:25px;
+}
+
+.webform-client-form-120 {
+	margin-top:-30px;
+}
+
+.webform-client-form-120 label,
+.webform-client-form-120 .grippie {
+	display:none !important;	
+}
+
+.webform-client-form-120 input,
+.webform-client-form-120 textarea {
+	border-radius:10px;
+	padding-left:10px;
+    max-width: 100%;
+ resize: none !important;
+}
+
+.webform-client-form-120 .form-actions {
+	text-align:center;
+	margin-top:20px;
+}
+
+.webform-client-form-120 .form-submit {
+	border-radius:10px;
+	padding:7px 50px;
+	font-size:1.7em;
+	background-color:#20BC80;
+	text-transform: uppercase;
+}
+
+/* front page */
+.home-container {
+    position: relative;
+    top: -260px !important;
+}
+
+.home-banner {
+	background-image:url('/sites/all/themes/skillson/img/theme/home1.jpg');
+	background-size:cover;
+	min-height:450px;
+	position:relative;
+	top:-300px;
+	color:white;
+	padding-left: 50px;
+}
+
+.home-banner h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+    margin-top: 145px;
+}
+
+.home-btn {
+	letter-spacing: 1px;
+    font-size: 1.8em!important;
+    border: transparent!important;
+    background-color: rgba(53,53,53,0.50);
+    color:white;
+}
+
+.home-btn:hover{
+    color:white;
+}
+
+.get-started-btn {
+    padding: 15px 40px !important;
+    position: relative;
+    left: 130px;
+    top: 30px;
+    font-weight: bold;
+}
+
+
+.home-banner p,
+.welcome-banner p{
+	font-size: 15px;
+	letter-spacing: 1px;
+}
+
+.welcome-banner {
+	background-image:url('/sites/all/themes/skillson/img/theme/home2.jpg');
+	background-size:cover;
+	min-height:450px;
+	color:white;
+	padding-right: 20px;
+}
+
+.welcome-banner h1 {
+  margin-top: 100px;
+    font-size: 6.4em;
+    margin-bottom: 10px;
+    font-weight: lighter;
+}
+
+.btn-check-courses {
+     padding: 20px 20px !important;
+	position: relative;
+    color: white !important;
+    top: 300px;
+    left: 205px;
+}
+
+.student-banner {
+	background-image:url('/sites/all/themes/skillson/img/theme/home3.jpg');
+	background-size:cover;
+	min-height:225px;
+	color:black;
+	margin-top:30px;
+	border-top:7px solid #292929;
+}
+
+.student-banner h1 {
+    font-size: 3em;
+    margin-bottom: 0px;
+    font-weight: lighter;
+}
+
+.student-banner strong {
+	 font-size: 1.5em;
+	 font-weight:bolder;
+}
+
+.student-banner p {
+	font-size:14px;
+	margin-top:5px;
+}
+
+
+.certificate-banner {
+	background-image:url('/sites/all/themes/skillson/img/theme/home4.jpg');
+	background-size:cover;
+	min-height:225px;
+	color:white;
+	margin-top:30px;
+	border-top:7px solid #292929;
+}
+
+.certificate-banner h1 {
+    font-size: 3em;
+    margin-bottom: 0px;
+    font-weight: lighter;
+}
+
+.certificate-banner p {
+	font-size:14px;
+	margin-top:5px;
+}
+
+.supp-btn {
+    position: relative;
+    /* float: right; */
+    top: 155px;
+    right: 30px;
+    font-size: 1.3em !important;
+    padding: 10px 20px;
+    background-color:rgba(57, 123, 122, 0.77);
+}
+
+.cert-btn-home {
+    position: relative;
+    top: 155px;
+    right: 30px;
+    font-size: 1.3em !important;
+    padding: 10px 35px;
+}
+
+
+.awesome-banner {
+	background-image:url('/sites/all/themes/skillson/img/theme/home5.jpg');
+	background-size:cover;
+	min-height:305px;
+	color:white;
+	margin-top:30px;
+	border-bottom:7px solid #292929;
+}
+
+.awesome-banner h1 {
+    font-size: 2.6em;
+    margin-bottom: 0px;
+    font-weight: lighter;
+}
+
+.awesome-banner p {
+	font-size:14px;
+	margin-top:5px;
+}
+
+#awesome-content {
+	position:relative;
+	top:180px;
+}
+
+.start-btn {
+    position: relative;
+    top: 220px;
+    right: 30px;
+    font-size: 1.3em !important;
+    padding: 10px 35px;
+  background-color: rgba(53,53,53,0.50);
+}
+
+
+.latest-course-banner {
+	background-image:url('/sites/all/themes/skillson/img/theme/home6.jpg');
+	background-size:cover;
+    min-height: 575px;
+	color:white !important;
+	margin-bottom:30px;
+}
+
+.my-course-banner {
+	background-image:url('/sites/all/themes/skillson/img/theme/home7.jpg');
+	background-size:cover;
+	min-height:520px;
+	color:white;
+	margin-bottom:30px;
+}
+
+.row-ban {
+	margin-bottom:15px;
+}
+
+/* latest course */
+.course-holder {
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: rgba(53, 53, 53, 0.8);
+    border-left: 5px solid #4A5865;
+}
+
+.course-thumb {
+    width: 75px;
+    height: 75px;
+    border-radius: 15px;
+    background-size: cover;
+}
+
+.course-holder p {
+    margin-left: 5px !important;
+    margin-bottom: 2px !Important;
+}
+
+.latest-title {
+    font-size: 14px;
+    letter-spacing:1px;
+}
+.latest-inst {
+    font-size: 14px;
+}
+.latest-price strong {
+	margin-top:3px;
+    font-size: 16px;
+}
+
+.latest-heading {
+    font-size: 2.0em;
+    margin-bottom: 38px;
+    color: white;
+}
+
+.all-course-btn {
+	font-size: 1.3em !important;
+    padding: 10px 35px;
+    background-color: rgba(53,53,53,0.50);
+    border:2px solid #788A9A;
+    color:#788A9A!important;
+}
+
+.front-student-container .student-form-container h1 {
+	font-size:2.5em;
+}
+
+.front-student-container .form-heading {
+	margin-bottom:25px;
 }
 
 

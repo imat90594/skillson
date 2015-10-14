@@ -62,39 +62,14 @@ $(document).ready(function(){
 	  
 	  $("#edit-field-first-name-und-0-value").attr("placeholder", "First Name");
 	  $("#edit-field-last-name-und-0-value").attr("placeholder", "Last Name");
+	  $("#edit-submitted-name").attr("placeholder", "Your Name");
+	  $("#edit-submitted-subject").attr("placeholder", "Subject");
+	  $("#edit-submitted-message").attr("placeholder", "Your Mesage...");
 	  
 	  
-	  //for placeholder in checkout 
-	  $(".checkout-billing-payment-container label").each(function(){
-		  var placeholder = $(this).text();
-		  var element_id = $(this).attr("for");
-		  $("#"+element_id).attr("placeholder", placeholder);
-	  });
 	  
-	  $(document).on("change", ".country", function(){
-		  console.log("sdf");
-	  });	
 	  
-	  $(".country").change(function(){
-		 alert("sdf"); 
-	  });
 	  
-	  //added for toggling search form
-	  var searchInputText = $("form.search-form input[type='text']");
-	  searchInputText.addClass("hidden");
-	  $("#search-header-icon").click(function(e){
-		  e.preventDefault();
-		  console.log("here");
-		  console.log(searchInputText);
-		  searchInputText.fadeToggle("fast", function(){
-			  
-			  if (searchInputText.hasClass("hidden"))
-				  searchInputText.removeClass("hidden");
-			  else
-				  searchInputText.addClass("hidden");
-		  });
-		  
-	  });
 	
 });
 //for countdown timer

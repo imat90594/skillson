@@ -1,58 +1,79 @@
-<div id="title-header">
-    <h1 class="no-margin-top">My Certificates</h1>
-</div>
-<?php if($data):?>
-	<h3 class="course-card-header"><strong>You have <?php echo count($data)?> certifcates ready!</strong></h3>
-	<br />
-	<?php foreach($data as $cert):?>
-		<?php $img = file_load($cert->opigno_course_image_fid);
-		$url = file_create_url($img->uri);?>
-		<div class="panel panel-default course-card certficate-container">
-		   <div class="panel-body">
-		      <div class="col-lg-2 course-thumbnail-placeholder" style="background-image: url('<?php print $url?>')"></div>
-		      <div class="col-lg-10 course-card-info">
-		         <div class="col-lg-9">
-		            <h3 class="course-card-header no-margin-bottom"><span class="field-content">
-		            	<a href="/node/<?php echo $cert->gid?>/quizzes"><strong>Course: <?php echo $cert->title?></strong></a></span></h3>
-		            <div class="course-card-body font-regular">
-		               <p><strong>Congratulations! Your certificate is ready for this course!</strong></p>
-		            </div>
-		            <div class="course-progress text-primary">
-		               <div class="col-lg-10 no-padding">
-		               		<b>Course Process</b>
-		               </div>
-		               <div class="col-lg-2 no-padding hidden-xs">
-		              	 	<img src="/sites/all/themes/daisyflo/img/theme/congrats.png" >
-		               </div>
-		               
-		               <div class="col-lg-11 no-padding">
-			               <div class="progress">
-			                  <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-			                     <span class="sr-only">100% Complete</span>
-			                  </div>
-			               </div>
-		               </div>
-		            </div>
-		         </div>
-		         <div class="col-lg-3">
-		            <div class="">
-			             <h3 class="course-card-header no-margin-bottom">
-			             	<strong><span class="glyphicon glyphicon-download-alt"></span><a target="_blank" href="/certficates/get/<?php echo $cert->gid?>">Download</a></strong>
-			             </h3>
-			             <h3 class="course-card-header">
-			             	<strong><span class="glyphicon glyphicon-print"></span><a target="_blank" href="/certficates/get/<?php echo $cert->gid?>">Print</a></strong>
-			             </h3>
-			             <a href="/node/<?php echo $cert->gid?>/quizzes">
-						 	<button class="btn btn-primary cert-view-btn">View Course</button>
-						 </a>
-		            </div>
-		         </div>
-		      </div>
-		   </div>
+<div class="row notif-container" style="border-bottom:0px">
+	<div class="col-md-12">
+		<div id="title-header" class="col-md-12">
+			<h1>My <strong class="bordered">Notifica</strong><strong>tions</strong></h1>
 		</div>
+		<div id="title-header" class="header-text col-md-10">
+			<p>Insert a description and delete me. I'm just a dummy text placeholder.
+			Insert a description and delete me. I'm just a dummy text placeholder.
+			</p>
+		</div>
+		<br>
+	</div>
+</div>
+
+<div class="row text-center notif-cert">
+	<h3 class="course-card-header no-margin no-padding"><strong>You have <?php echo count($data)?> certificate(s) ready!</strong></h3>
+	<br />
+</div>
+
+<div class="row notif-container" style="border-top:0px; min-height:400px">
+<?php  if($data): ?>
+	<?php foreach($data as $cert):?>
+		<?php $img = file_load($cert->opigno_course_image_fid); ?>
+		<?php $url = file_create_url($img->uri);?>
+		<div class="notif-holder col-md-12 no-padding">
+			<div class="col-md-2 no-padding bell-container">
+				<img class="cert" src="/sites/all/themes/skillson/img/theme/certificate.png" />
+			</div>
+			<div class="col-md-8">
+				<p class="text-title"><strong>Congratulations! You earned a certificate for <?php echo $cert->title?></p>
+				<p class="notif-text">
+					<strong>Course Title: </strong> <?php echo $cert->title?> <br />
+					<strong>Task Results: </strong> 100% <br />
+				</p>
+			</div>
+			<div class="col-md-2 no-padding bell-container">
+				<div class="text-center">
+					<a href="/certficates/get/<?php echo $cert->gid?>">
+						<span class="glyphicon glyphicon-bookmark"></span>
+					</a>
+					&nbsp;
+					<a href="/certficates/get/<?php echo $cert->gid?>">
+						<span class="glyphicon glyphicon-eye-open"></span>
+					</a>
+				</div>
+					<a class="btn btn-primary print-cert" href="/certficates/get/<?php echo $cert->gid?>">
+						Download PDF
+					</a>
+			</div>
+		</div>	
 	<?php endforeach?>
 <?else:?>
 
-<p>You have no certificates at this moment.</p>
+
+<div class="col-md-12">
+<div class="col-md-2">
+</div>
+<div class="col-md-8 no-content text-center">
+<div class="col-md-12">
+<span class="glyphicon glyphicon-file gl-big"></span>
+</div>
+<div class="col-md-2">
+</div>
+<div class="col-md-8 no-content-divider">
+<div class="no-content-text text-left">
+<hr/>
+<h1>Sorry</h1>
+<p>You have <strong>0 Certificate</strong> at the moment
+</div>
+</div>
+<div class="col-md-2">
+</div>
+</div>
+<div class="col-md-2">
+</div>
+</div>
 
 <?php endif?>
+</div>

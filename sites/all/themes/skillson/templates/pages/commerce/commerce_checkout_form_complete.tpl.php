@@ -1,9 +1,9 @@
 
 
-<div class="row ">
+<div class="row complete-message">
 	<div class="text-center">
 		<div class="bg-color-primary">
-			<h1><span class="text-primary">Thank you</span> for using OnlineCourses.</h1>
+			<h1><span class="text-primary">Thank you</span> for using Skills On Project.</h1>
 			<div class="col-md-3"></div>
 			<div class="col-md-6">
 				<p>You'll be a professional in no time. Enjoy learning with us!</p>

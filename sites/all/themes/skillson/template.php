@@ -162,7 +162,7 @@ function _daisyflo_get_main_navigation() {
 	return $html;}
 //--------------------------------------------------------------------------------------------------------------------------------
 function skillson_form_commerce_checkout_form_checkout_alter(&$form, &$form_state, $form_id) {
-	$form['buttons']['continue']['#value'] = "PLACE ORDER";
+	$form['buttons']['continue']['#value'] = "Finish Order";
 }
 //--------------------------------------------------------------------------------------------------------------------------------
 function skillson_element_info_alter(&$elements) {

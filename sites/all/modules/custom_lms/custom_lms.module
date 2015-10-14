@@ -52,9 +52,74 @@ function custom_lms_menu(){
         'page callback'    => 'events',
         'access callback' => TRUE,
     );
+	
+	$items['homepage'] = array(
+        'title' 		   => 'Homepage',
+        'description' 	   => 'homepage',
+        'page callback'    => 'homepage',
+        'access callback' => TRUE,
+    );
+	
+	$items['admin/config/lms_social_media/settings'] = array(
+		'title'		  		=> 'Social Media Settings',
+		'description' 		=> 'Configuration of social media links',
+		'page callback' 	=> 'drupal_get_form',
+		'page arguments'	=> array('lms_social_media_links'),
+		'access arguments'  => array('administer site configuration'),
+		'type' 				=> MENU_NORMAL_ITEM,
+	);
+	
 		
     return $items;
 }
+
+
+function lms_social_media_links() {
+  $form = array();
+
+  $form['facebook_link'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Facebook'),
+    '#default_value' => variable_get('facebook_link'),
+    '#description' => t("Social media url link"),
+    '#required' => FALSE,
+  );
+
+  $form['google_link'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Google Plus'),
+    '#default_value' => variable_get('google_link'),
+    '#description' => t("Social media url link"),
+    '#required' => FALSE,
+  );
+
+  $form['twitter_link'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Twitter'),
+    '#default_value' => variable_get('twitter_link'),
+    '#description' => t("Social media url link"),
+    '#required' => FALSE,
+  );
+
+  $form['linkedin_link'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Linkedin'),
+    '#default_value' => variable_get('linkedin_link'),
+    '#description' => t("Social media url link"),
+    '#required' => FALSE,
+  );
+
+  $form['rss_link'] = array(
+    '#type' => 'textfield',
+    '#title' => t('RSS'),
+    '#default_value' => variable_get('rss_link'),
+    '#description' => t("Social media url link"),
+    '#required' => FALSE,
+  );
+
+  return system_settings_form($form);
+}
+
 
 
 function custom_lms_menu_alter(&$items) {
@@ -65,6 +130,7 @@ function custom_lms_menu_alter(&$items) {
 	 $items['referrals']['access callback'] = 'enroll_uac';
 	 $items['subscribe']['access callback'] = 'enroll_uac';
 	 $items['events']['access callback'] = 'enroll_uac';
+	 $items['homepage']['access callback'] = 'enroll_uac';
 }
 
 function upload_voucher_uac(){
@@ -87,6 +153,12 @@ function enroll_uac(){
 	else 
 		return false;
 }
+
+function homepage() {
+	$theme = theme('homepage');
+	return $theme;
+}
+
 
 function redeem() {
 	
@@ -192,13 +264,14 @@ function enroll_form($form, &$form_state) {
     '#type' => 'textfield',
     '#title' => 'Voucher Code',
     '#size' => 100,
+    '#attributes' => array("placeholder" => t("(Only Given by Skills on Project Team)")),
     '#maxlength' => 100,
     '#required' => TRUE, 
   );
   
   $form['submit'] = array(
         '#type' => 'submit',
-        '#value' => 'Submit',
+        '#value' => 'Apply Code',
   );
   
 	
@@ -282,6 +355,7 @@ function enroll_form_submit($form, &$form_state) {
 function custom_lms_form_user_register_form_alter(&$form, $form_state, $form_id) {
 	$form["#submit"][] =  "redeem_course_via_registration";
 } 
+
 
 
 function redeem_course_via_registration($form, &$form_state) {
@@ -468,6 +542,12 @@ function custom_lms_theme($existing, $type, $theme, $path) {
     $items['events'] = array(
         'render element' => 'form',
         'template' => 'events',
+        'path' => drupal_get_path('module', 'custom_lms').'/template'
+    );
+	
+    $items['homepage'] = array(
+        'render element' => 'form',
+        'template' => 'homepage',
         'path' => drupal_get_path('module', 'custom_lms').'/template'
     );
 	
